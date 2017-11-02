@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    _dataArray = @[@"1个按钮",@"2个按钮",@"系统UIAlertController"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,7 +30,14 @@
 
 #pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row < 5) {
+    
+    if (indexPath.row == 0) {
+        [HCAlertView alertWithTitle:@"HCAlertView" message:@"测试测试测试测试测试\n测试测试测试测试测试测试\n测试测试测试测试测试测试测试"
+                           textMent:NSTextAlignmentLeft cancel:nil sure:@"我知道了"
+                           callBack:^(HCAlertView *alert, NSInteger index) {
+                               NSLog(@"%ld", (long)index);
+                           }];
+    } else if (indexPath.row == 1) {
         [HCAlertView alertWithTitle:@"HCAlertView" message:@"测试测试测试测试测试\n测试测试测试测试测试测试\n测试测试测试测试测试测试测试"
                            textMent:NSTextAlignmentLeft cancel:@"取消" sure:@"确定"
                            callBack:^(HCAlertView *alert, NSInteger index) {

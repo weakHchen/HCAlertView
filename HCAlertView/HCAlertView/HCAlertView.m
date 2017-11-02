@@ -97,12 +97,12 @@
         CGFloat centerX = _contentWidth/2;
         CGFloat centerY = _contentWidth*_ratio*0.25/2;
         self.titleLabel.center = CGPointMake(centerX, centerY);
-        
-        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, _contentWidth*_ratio*0.25, _contentWidth, 0.5)];
-        line.backgroundColor = _lineColor;
+        // title 添加线
+//        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, _contentWidth*_ratio*0.25, _contentWidth, 0.5)];
+//        line.backgroundColor = _lineColor;
         
         [self.contentView addSubview:self.titleLabel];
-        [self.contentView addSubview:line];
+//        [self.contentView addSubview:line];
     }
 }
 
@@ -116,7 +116,8 @@
     CGFloat top = 0;
     if (![self isEmptyString:self.title]) {
         height = height - _contentWidth*_ratio*0.25;
-        top = _contentWidth*_ratio*0.25;
+        // 标题高度  注意标题加线时 0.7去掉
+        top = _contentWidth*_ratio*0.25*0.7;
     }
     self.msgLabel.font = _fontMsg;
     self.msgLabel.textColor = _fontColor_msg;
@@ -127,10 +128,6 @@
     
     self.msgLabel.frame = CGRectMake(_padding, (height-maxSize.height)/2+top, width, maxSize.height);
     [self.contentView addSubview:self.msgLabel];
-    NSLog(@"height:%f",height);
-    NSLog(@"_contentWidth*_ratio:%f",_contentWidth*_ratio);
-    NSLog(@"maxSize.height:%f",maxSize.height);
-    NSLog(@"(height-maxSize.height)/2:%f",(height-maxSize.height)/2);
 }
 
 - (void)setUpMsgLabel_AttrMessage{
@@ -139,7 +136,8 @@
     CGFloat top = 0;
     if (![self isEmptyString:self.title]) {
         height = height - _contentWidth*_ratio*0.25;
-        top = _contentWidth*_ratio*0.25;
+        // 标题高度  注意标题加线时 0.7去掉
+        top = _contentWidth*_ratio*0.25*0.7;
     }
     self.msgLabel.font = _fontMsg;
     self.msgLabel.textColor = _fontColor_msg;
@@ -150,10 +148,6 @@
     
     self.msgLabel.frame = CGRectMake(_padding, (height-maxSize.height)/2+top, width, maxSize.height);
     [self.contentView addSubview:self.msgLabel];
-    NSLog(@"height:%f",height);
-    NSLog(@"_contentWidth*_ratio:%f",_contentWidth*_ratio);
-    NSLog(@"maxSize.height:%f",maxSize.height);
-    NSLog(@"(height-maxSize.height)/2:%f",(height-maxSize.height)/2);
 }
 
 
