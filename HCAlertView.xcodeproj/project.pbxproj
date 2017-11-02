@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		892737491FAABAA300295A19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		894AFA661FA6BD3E005462B5 /* HCAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		894AFA691FA6BD3E005462B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		894AFA6A1FA6BD3E005462B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 				894AFA741FA6BD3E005462B5 /* LaunchScreen.storyboard */,
 				894AFA771FA6BD3E005462B5 /* Info.plist */,
 				894AFA781FA6BD3E005462B5 /* main.m */,
+				892737491FAABAA300295A19 /* README.md */,
 			);
 			path = HCAlertView;
 			sourceTree = "<group>";

@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@"1个按钮",@"2个按钮",@"系统UIAlertController"];
+    _dataArray = @[@"1个按钮",@"2个按钮",@"attrMessage",@"系统UIAlertController"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -43,6 +43,16 @@
                            callBack:^(HCAlertView *alert, NSInteger index) {
                                NSLog(@"%ld", (long)index);
                            }];
+    } else if (indexPath.row == 2) {
+        NSString *message = @"我是attrMessage\n测试测试测试测试测试测试\n测试测试测试测试测试测试测试";
+        NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:message];
+        [attr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(message.length-14, 14)];
+        [HCAlertView alertWithTitle:@"HCAlertView" attrMsg:attr
+                           textMent:NSTextAlignmentCenter cancel:nil sure:@"我知道了"
+                           callBack:^(HCAlertView *alert, NSInteger index) {
+                               NSLog(@"%ld", (long)index);
+                           }];
+        
     } else {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"标题" message:@"这个是UIAlertController的默认样式" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];

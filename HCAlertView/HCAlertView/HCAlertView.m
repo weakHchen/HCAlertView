@@ -58,19 +58,20 @@
 }
 
 - (instancetype)initWithTitle:(NSString*)title attrMsg:(NSAttributedString*)attrMsg textMent:(NSTextAlignment)tment cancel:(NSString*)ctitle sure:(NSString*)stitle callBack:(HCAlertViewBlock)callBack{
-    
-    self.title = title;
-    self.attrMessage = attrMsg;
-    self.cancelTitle = ctitle;
-    self.sureTitle = stitle;
-    self.callBackBlock = callBack;
-    self.textMent = tment;
-    
-    [self setUpDefault];
-    [self setUpTitleLabel];
-    [self setUpMsgLabel_AttrMessage];
-    [self setUpButtons];
-    
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.attrMessage = attrMsg;
+        self.cancelTitle = ctitle;
+        self.sureTitle = stitle;
+        self.callBackBlock = callBack;
+        self.textMent = tment;
+        
+        [self setUpDefault];
+        [self setUpTitleLabel];
+        [self setUpMsgLabel_AttrMessage];
+        [self setUpButtons];
+    }
     return self;
 }
 
